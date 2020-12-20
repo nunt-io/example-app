@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "login": "ng serve",
-    "start": "ng serve",
-    "build": "ng build",
+    "login": "npm login --registry https://registry.nunt.io/",
+    "install": "npm install --registry https://registry.nunt.io/",
+    "start": "tailwindcss build ./nunt/styles.scss -o ./nunt/styles.css -c config/tailwind.dev.config.js && ng serve",
+    "build": "tailwindcss build ./nunt/styles.scss -o ./nunt/styles.css -c config/tailwind.prod.config.js && ng build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -20,7 +21,11 @@
     "@angular/platform-browser": "~11.0.5",
     "@angular/platform-browser-dynamic": "~11.0.5",
     "@angular/router": "~11.0.5",
+    "@nunt/core": "0.0.1",
+    "@nunt/design": "0.0.1",
+    "postcss": "^8.2.1",
     "rxjs": "~6.6.0",
+    "tailwindcss": "^2.0.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
