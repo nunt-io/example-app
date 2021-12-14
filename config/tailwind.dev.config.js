@@ -1,4 +1,4 @@
-const config = require('@nunt/design/tailwind.config.js');
+const config = require('@nunt/design/tailwind.config');
 
 module.exports = {
   darkMode: config.darkMode,
