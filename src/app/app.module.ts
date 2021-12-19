@@ -7,7 +7,6 @@ import {NuntDesignModule} from '@nunt/design';
 import {RouterModule} from '@angular/router';
 import {routes} from './app.routes';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NuntFormModule} from '@nunt/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import {NuntFormModule} from '@nunt/forms';
     }),
     NuntCmsModule.forRoot(),
     NuntDesignModule.forRoot(),
-    NuntFormModule.forRoot(),
     RouterModule.forRoot(routes),
     BrowserAnimationsModule
   ],

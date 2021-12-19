@@ -26,7 +26,6 @@
     "@ngx-translate/http-loader": "~7.0.0",
     "@nunt/core": "^0.0.1",
     "@nunt/design": "^0.0.1",
-    "@nunt/forms": "^0.0.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
