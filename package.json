@@ -3,10 +3,11 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "login": "npm login",
-    "tailwind": "tailwindcss build -i ./nunt/styles.scss -o ./nunt/styles.css -c config/tailwind.dev.config.js",
-    "start": "tailwindcss build -i ./nunt/styles.scss -o ./nunt/styles.css -c config/tailwind.dev.config.js && ng serve",
-    "build": "tailwindcss build -i ./nunt/styles.scss -o ./nunt/styles.css -c config/tailwind.prod.config.js && ng build --prod --aot",
+    "start": "concurrently --kill-others \"npm run tailwind\" \"npm run serve\"",
+    "serve": "ng serve --live-reload",
+    "startprod": "tailwindcss build -i ./nunt/styles.scss -o ./nunt/styles.css -c tailwind.config.js && ng serve --disableHostCheck --prod",
+    "build": "tailwindcss build -i ./nunt/styles.scss -o ./nunt/styles.css -c tailwind.config.js && ng build --prod --aot",
+    "tailwind": "tailwindcss build -i ./nunt/styles.scss -o ./nunt/styles.css -c tailwind.config.js --watch",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -25,6 +26,7 @@
     "@ngx-translate/http-loader": "~7.0.0",
     "@nunt/core": "^0.0.1",
     "@nunt/design": "^0.0.1",
+    "@nunt/forms": "^0.0.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -37,6 +39,7 @@
     "@types/node": "^12.11.1",
     "autoprefixer": "^10.0.2",
     "codelyzer": "^6.0.0",
+    "concurrently": "^6.5.1",
     "jasmine-core": "~3.10.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.3.0",
