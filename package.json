@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently --kill-others \"npm run tailwind\" \"npm run serve\"",
     "serve": "ng serve --live-reload",
-    "startprod": "tailwindcss build -i ./nunt/styles.scss -o ./nunt/styles.css -c tailwind.config.js && ng serve --disableHostCheck --prod",
-    "build": "tailwindcss build -i ./nunt/styles.scss -o ./nunt/styles.css -c tailwind.config.js && ng build --prod --aot",
-    "tailwind": "tailwindcss build -i ./nunt/styles.scss -o ./nunt/styles.css -c tailwind.config.js --watch",
+    "start": "concurrently --kill-others \"npm run tailwind\" \"npm run serve\"",
+    "start:prod": "tailwindcss build -i ./src/styles.scss -o ./src/styles.css -c tailwind.config.js && ng serve --disableHostCheck --prod",
+    "build": "tailwindcss build -i ./src/styles.scss -o ./src/styles.css -c tailwind.config.js && ng build --prod --aot",
+    "build:lib": "ng-packagr -p ng-package.json && cd dist && npm publish --registry https://nunt.io/registry",
+    "tailwind": "tailwindcss build -i ./src/styles.scss -o ./src/styles.css -c tailwind.config.js --watch",
+    "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
