@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {ApplicationSetupProvider, NuntCmsModule, NuntCoreModule} from '@nunt/core';
+import {NuntCmsModule, NuntCoreModule} from '@nunt/core';
 import {NuntDesignModule} from '@nunt/design';
 import {RouterModule} from '@angular/router';
 import {routes} from './app.routes';
